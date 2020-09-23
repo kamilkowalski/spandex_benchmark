@@ -3,9 +3,9 @@ defmodule SpandexBenchmark do
   alias SpandexBenchmark.Tracer
 
   def traced_request(n) do
-    Tracer.trace("traced_request") do
+    Tracer.trace "traced_request" do
       for i <- 1..n do
-        Tracer.span("operation") do
+        Tracer.span "operation" do
           i * i
         end
       end

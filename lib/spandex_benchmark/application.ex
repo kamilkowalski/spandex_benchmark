@@ -2,14 +2,13 @@ defmodule SpandexBenchmark.Application do
   use Application
 
   def start(_type, _args) do
-    opts =
-      [
-        host: "localhost",
-        port: 8126,
-        batch_size: 10,
-        sync_threshold: 100,
-        http: HTTPoison
-      ]
+    opts = [
+      host: "localhost",
+      port: 8126,
+      batch_size: 10,
+      sync_threshold: 100,
+      http: HTTPoison
+    ]
 
     children = [
       {SpandexDatadog.ApiServer, opts}
